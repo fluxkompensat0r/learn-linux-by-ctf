@@ -1,0 +1,17 @@
+export PATH=$PATH:$HOME/.challenge/
+
+runner () {
+  x="23ca8afa-964e-4be5-a1e3-9164e5e0d08e 5f97b0ef-54a9-4fc3-8448-b92be56e2490 6ca6361e-e78b-4752-a5b9-53291e7c76d7 12f38317-dd1b-4f61-981e-d9a3acec6b43 3d2eb9c5-c6fa-4aa9-b455-51607fdd5fc0 cb014434-de47-4ffc-84e5-2c9c23d5cc7c 3c2326d6-71dc-43e0-b6c1-4f92cb3f0f68 065e452d-9ab4-483e-8132-cd1badb1a7cf 80c178cf-97e7-4d45-8641-853097d2eb2e 926e6343-c24f-43f8-83af-a5a1883135ea f881aac4-d34e-408b-963d-6005998d58e8 8d36f7cf-98b3-48b5-9d79-a4c668c5ff1f 93caf04e-aeee-494c-aec5-eb9a503a695c 0e5047b2-026b-4230-9443-f5650015a153 135e9072-f5bd-46fd-b67b-404c23eaceb7 f1213cfb-0e76-42fd-86b3-ccce26bdf8c4 8906affa-1843-4cca-97e4-851ab21d5285 044227e7-d989-4310-affa-a95aa7ed7d62 fd6064d5-4de4-4af1-965a-883135d58e5a ab1ce2f8-e6bc-4005-b99a-aa9db0b8c562 45930fae-5f5d-43cd-88de-35334da8f258 b6cfeb3e-0b4f-48b9-9391-6ecadc735e17 f31cbae6-0378-4cb6-b641-62d471444259 cda0f67e-81f3-4c0d-a13b-e2d8b27155b3 817e5291-6f81-4006-9449-c04b044ada46 08c7ac81-0dce-426e-91b9-d0ca06fd70af a432f16b-8bf5-49c6-a616-4c2f022b6ac3 92da13aa-8423-40d9-8174-f2b78b4c7157 8f5830a9-455f-45f7-b3e5-df6afcb8486e e87597ef-a23e-4902-baf4-bc495c49e874 2df2a1f7-c579-4a6a-a03a-d629e2e4dee3 01786435-1e56-41c2-84a2-3d5d82f9fbe8 b4637202-b66a-4a55-b058-38538b7dca9a dd2117dd-0bd4-423e-9252-460b709517d7 1ef2d457-c9a8-4f24-886a-d5644894ad7c {{flag}}"
+  while true; do 
+    for i in $x; do
+      if [ $(ps aux | grep challenge09 | wc -l) -lt 20 ]; then
+      #echo $i; sleep 1.2;
+        ./.challenge/challenge09 $i & 
+        sleep 0.3;
+      fi
+    done
+  done
+}
+
+#runner &
+./.challenge/challenge09 &

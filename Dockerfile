@@ -3,7 +3,7 @@ FROM ubuntu:22.04 AS base
 # install required packages
 ENV DEBIAN_FRONTEND=noninteractive 
 RUN apt update
-RUN apt install -y python3 python3-pip less vim man
+RUN apt install -y python3 python3-pip less vim man telnet net-tools netcat
 
 # TODO: figure out on how to install challenge dependencies that are needed for runtime
 
@@ -16,7 +16,7 @@ RUN git clone https://github.com/charmbracelet/glow
 RUN mkdir -p /home/go/bin
 RUN cd glow && env GOBIN=/home/go/bin/ go install
 
-# -- build challeges --
+# -- build challenges --
 
 FROM  base AS challenges
 COPY challenges/ challenges/
@@ -33,7 +33,7 @@ RUN cd scripts && make
 
 # create users and store flags
 RUN chmod +x scripts/create_users.py
-RUN ./scripts/create_users.py
+RUN python3 ./scripts/create_users.py
 
 
 # -- final image --
@@ -71,6 +71,6 @@ RUN sed -i '1s;^;alias flag="exec /usr/bin/_guess-flag.sh"\ndisplay-challenge\n\
 
 ENV PROMPT_CHALLENGE=1
 
-USER challenge00
-WORKDIR /home/challenge00
+USER challenge09
+WORKDIR /home/challenge09
 ENTRYPOINT /bin/bash

@@ -12,7 +12,7 @@ Most commands support the `--help` argument.
 
 When run with a `--help` argument, a command will display a list of the different arguments it receives.
 
-## Try is yourself!
+## Try it yourself!
     run: `cat --help`
 
 

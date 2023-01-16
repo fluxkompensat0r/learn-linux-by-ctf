@@ -11,6 +11,7 @@ import pwd
 import grp
 import dataclasses
 import shutil
+from subprocess import STDOUT, check_call
 
 import flag
 
@@ -134,6 +135,12 @@ class CtfChallenge:
                 shutil.copy2(src, dst)
             _chown(dst, user, group, recursive=True)
 
+        # package install does not work for some reason - needs investigation
+        #for entry in self._config["build"]["required_packages"]:
+        #    pkg_name = entry
+        #    subprocess.run("apt-get install -y "+pkg_name, shell=True, check=True)
+            #check_call(['apt-get', 'install', '-y', pkg_name],
+            #    stdout=open(os.devnull,'wb'), stderr=STDOUT) 
 
 def create_all_users(challenges_base_dir, users_home_base_dir):
     challenges_directories = \

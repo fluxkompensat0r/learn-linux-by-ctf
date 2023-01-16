@@ -1,19 +1,28 @@
-# man
+# archive
 
-Manpages are used to describe Linux commands and help you understand what settings and 
-arguments can be passed.
- 
-man is very important for daily operation of unix based systems.
+In linux systems files and folders can be combined in *archives*.
 
-You can open manpages locally by directly referencing them after the man command like:
-man filename
+Like the well known *zip* format archives in linux are not compressed per default.
 
-Keep in mind you can also search in manpages, maybe this will help you.
+*Archives* can be compressed in several formats and with different *compressing algorithms*.
+
+The following compressions are commonly used for diferrent purposes:
+- ‘--gzip’		gzip
+- ‘--bzip2’		bzip2
+- ‘--xz’		xz
+- ‘--lzip’		lzip
+- ‘--lzma’		lzma
+- ‘--lzop’		lzop
+- ‘--zstd’		zstd
+
+Using the `tar`command we can create archives and also compress them.
 
 # Your goal
-You need to find the flag hidden in the local created man page.
-The flag is hidden between MeP Options and some endian specific settings, happy searching!
+The flag for this challenge is hidden in the *information* section of an `tar` *archive*.
+Find the archive and try to decompress and/or unpack it to get to know the `tar` *command*.
+Don't forget to checkout the man pages if you can't find a way of using the needed tools.
 
 # Useful commands
-- man
-- grep
+- tar
+- cd
+- ls
