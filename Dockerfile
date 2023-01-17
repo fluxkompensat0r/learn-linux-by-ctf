@@ -71,6 +71,6 @@ RUN sed -i '1s;^;alias flag="exec /usr/bin/_guess-flag.sh"\ndisplay-challenge\n\
 
 ENV PROMPT_CHALLENGE=1
 
-USER challenge09
-WORKDIR /home/challenge09
+USER challenge00
+WORKDIR /home/challenge00
 ENTRYPOINT /bin/bash
