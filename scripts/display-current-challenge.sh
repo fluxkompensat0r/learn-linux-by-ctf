@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ "$PROMPT_CHALLENGE" = "1" ]; then
+#if [ "$PROMPT_CHALLENGE" = "1" ]; then
 	/usr/bin/glow -p $HOME/.description
-fi
+#fi
 
 export PROMPT_CHALLENGE="1"

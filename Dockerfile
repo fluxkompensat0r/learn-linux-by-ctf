@@ -1,9 +1,8 @@
-FROM ubuntu:22.04 AS base
+FROM ubuntu:22.10 AS base
 
 # install required packages
 ENV DEBIAN_FRONTEND=noninteractive 
-RUN apt update
-RUN apt install -y python3 python3-pip less vim man telnet net-tools netcat
+RUN apt-get update &&  yes | unminimize && apt install -y python3 python3-pip less vim man-db manpages telnet net-tools ncat
 
 # TODO: figure out on how to install challenge dependencies that are needed for runtime
 
