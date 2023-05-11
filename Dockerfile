@@ -60,6 +60,11 @@ COPY --chown=root:root scripts/display-current-challenge.sh /usr/bin/display-cha
 COPY --chown=root:root scripts/get_next_challenge.py /usr/bin/_get-next-challenge
 COPY --from=challenges /scripts/guess_flag /usr/bin/_guess-flag
 COPY --from=challenges /scripts/guess_flag.sh /usr/bin/_guess-flag.sh
+COPY --from=challenges /scripts/ps_aux_demo.sh /usr/bin/ps_aux_demo.sh
+
+
+
+
 
 # allow execute permission to everyone
 RUN chmod a+x /usr/bin/display-challenge
