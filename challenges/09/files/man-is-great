@@ -7,6 +7,8 @@ linux-by-ctf \- Does nothing special
 man linux-by-ctf [NOTHING]
 .SH DESCRIPTION
 Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Seems like you found some secret!
+"{{ flag }}"
 .SH OPTIONS
 The linux-by-ctf command does not take any options. However, you can supply username. But it still does nothing =P
 .SH BUGS
@@ -14877,8 +14879,6 @@ Generate code for a little-endian target.
 Generate code for the 210 processor.
 .IP "\fB\-mno\-lsim\fR" 4
 .IX Item "-mno-lsim"
-Seems like you found some secret!
-"{{ flag }}"
 .IP ""
 Assume that runtime support has been provided and so omit the
 simulator library (\fIlibsim.a)\fR from the linker command line.

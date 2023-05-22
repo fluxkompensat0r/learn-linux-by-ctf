@@ -1,10 +1,8 @@
-FROM ubuntu:22.04 AS base
+FROM ubuntu:22.10 AS base
 
 # install required packages
 ENV DEBIAN_FRONTEND=noninteractive 
-RUN apt update
-RUN apt install -y python3 python3-pip less vim man telnet net-tools netcat
-
+RUN apt-get update &&  yes | unminimize && apt install -y python3 python3-pip less vim man-db manpages telnet net-tools ncat wget curl
 # TODO: figure out on how to install challenge dependencies that are needed for runtime
 
 FROM base AS binaries
@@ -61,6 +59,11 @@ COPY --chown=root:root scripts/display-current-challenge.sh /usr/bin/display-cha
 COPY --chown=root:root scripts/get_next_challenge.py /usr/bin/_get-next-challenge
 COPY --from=challenges /scripts/guess_flag /usr/bin/_guess-flag
 COPY --from=challenges /scripts/guess_flag.sh /usr/bin/_guess-flag.sh
+COPY --from=challenges /scripts/ps_aux_demo.sh /usr/bin/ps_aux_demo.sh
+
+
+
+
 
 # allow execute permission to everyone
 RUN chmod a+x /usr/bin/display-challenge
