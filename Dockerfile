@@ -1,4 +1,4 @@
-FROM ubuntu:22.10 AS base
+FROM ubuntu:22.04 AS base
 
 # install required packages
 ENV DEBIAN_FRONTEND=noninteractive 
